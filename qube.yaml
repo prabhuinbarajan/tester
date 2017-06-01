@@ -1,0 +1,32 @@
+id: cf8430b8-a48b-43f8-8808-80b323651412
+version: v2
+name: python-tester-1
+apptype: api
+language: python
+containerName: python-tester-1
+toolchain:
+  id: 58e5d97bacac5a001de2b937
+  name: Qubeship-Python-Toolchain
+opinion:
+  id: 58f2da5ee936e0000b15134e
+  name: Qubeship default opinion
+endpoint:
+  id: 58f2d538238503000b74d7c1
+  name: qubeship-customer-docker-registry
+  type: registry
+variables:
+  - name: APP_VERSION
+    value: v0.1
+build:
+  compile:
+    publish:
+     - dist/
+bake:
+  skip: false
+test:
+  skip: true
+deploy_to_qa:
+  skip: true
+deploy_to_prod:
+  skip: false
+
